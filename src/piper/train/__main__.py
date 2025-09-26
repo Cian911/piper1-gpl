@@ -55,6 +55,7 @@ def main():
     torch.backends.cudnn.allow_tf32 = True
     torch.backends.cudnn.deterministic = False
     
+    # Ckpt path
     clean_checkpoint("/content/piper1-gpl/checkpoint/bryce-3499.ckpt")
        
     _cli = VitsLightningCLI(  # noqa: ignore=F841
