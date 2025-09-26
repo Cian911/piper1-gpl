@@ -56,7 +56,7 @@ def main():
     torch.backends.cudnn.deterministic = False
     
     # Ckpt path
-    clean_checkpoint("/content/piper1-gpl/checkpoint/bryce-3499.ckpt")
+    #clean_checkpoint("/content/piper1-gpl/checkpoint/bryce-3499.ckpt")
        
     _cli = VitsLightningCLI(  # noqa: ignore=F841
         VitsModel, VitsDataModule, trainer_defaults={"max_epochs": -1}
