@@ -249,6 +249,7 @@ class VitsDataModule(L.LightningDataModule):
                 cache_id = get_cache_id(row_number, text)
 
                 phoneme_ids_path = self.cache_dir / f"{cache_id}.phonemes.pt"
+                print("CACHE_ID: ", phoneme_ids_path )
                 if not phoneme_ids_path:
                     _LOGGER.warning(
                         "Missing phoneme ids for %s: %s",

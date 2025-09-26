@@ -28,6 +28,7 @@ def audio_float_to_int16(
 def load_phonemes(phonemes_path: Union[str, Path]) -> Dict[str, int]:
     phonemes: Dict[str, int] = {}
     with open(phonemes_path, "r", encoding="utf-8") as phonemes_file:
+        _LOGGER.log("FUCK: %s", phonemes_path)
         phoneme_idx = 0
         for line in phonemes_file:
             line = line.strip("\r\n")
@@ -57,5 +58,5 @@ def load_state_dict(model, saved_state_dict):
 
 
 def get_cache_id(row_number: int, text: str, max_length: int = 50) -> str:
-    cache_id = str(row_number) + "_" + sanitize_filename(text)
+    cache_id = str(row_number) + "_" + sanitize_filename(text.lower(), platform="Linux")
     return cache_id[:max_length]
